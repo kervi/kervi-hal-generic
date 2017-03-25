@@ -2,12 +2,8 @@ from kervi.hal.gpio import IGPIODeviceDriver
 
 class GPIODriver(IGPIODeviceDriver):
 
-    GPIO2 = 3
-    GPIO3 = 5
-    GPIO4 = 7
-
     def __init__(self):
-        print("init win gpio driver")
+        print("init generic gpio driver")
 
     def define_as_input(self, pin):
         print("define pin in")
