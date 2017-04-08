@@ -1,9 +1,13 @@
 from kervi.hal.gpio import IGPIODeviceDriver
+from kervi.hal.gpio import CHANNEL_TYPE_GPIO
 
 class GPIODriver(IGPIODeviceDriver):
 
     def __init__(self):
         print("init generic gpio driver")
+
+    def _get_channel_type(self, channel):
+        return CHANNEL_TYPE_GPIO
 
     def define_as_input(self, pin):
         print("define pin in")
