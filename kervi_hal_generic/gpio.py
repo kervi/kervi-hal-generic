@@ -1,13 +1,26 @@
 from kervi.hal.gpio import IGPIODeviceDriver
-from kervi.hal.gpio import CHANNEL_TYPE_GPIO
+from kervi.hal.gpio import CHANNEL_TYPE_GPIO, CHANNEL_TYPE_ANALOG_IN, CHANNEL_TYPE_ANALOG_OUT
 
 class GPIODriver(IGPIODeviceDriver):
 
-    def __init__(self):
+    def __init__(self, gpio_id="generic_gpio"):
+        IGPIODeviceDriver.__init__(self, gpio_id)
         print("init generic gpio driver")
 
     def _get_channel_type(self, channel):
-        return CHANNEL_TYPE_GPIO
+        if channel in ["GPIO1", "GPIO2", "GPIO3"]:
+            return CHANNEL_TYPE_GPIO
+        elif channel in ["DAC1", "DAC2"]:
+            return CHANNEL_TYPE_ANALOG_OUT
+        elif channel in ["ADC1", "ADC2"]:
+            return CHANNEL_TYPE_ANALOG_IN
+
+    def _get_channel_names(self):
+        return ["GPIO1", "GPIO2", "GPIO3", "DAC1", "DAC2", "ADC1", "ADC2"]
+
+    @property
+    def name(self):
+        return "Generic GPIO"
 
     def define_as_input(self, pin):
         print("define pin in")
