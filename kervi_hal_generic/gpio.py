@@ -1,5 +1,5 @@
 from kervi.hal.gpio import IGPIODeviceDriver
-from kervi.hal.gpio import CHANNEL_TYPE_GPIO, CHANNEL_TYPE_ANALOG_IN, CHANNEL_TYPE_ANALOG_OUT
+
 
 class GPIODriver(IGPIODeviceDriver):
 
@@ -8,6 +8,7 @@ class GPIODriver(IGPIODeviceDriver):
         print("init generic gpio driver")
 
     def _get_channel_type(self, channel):
+        from kervi.hal.gpio import CHANNEL_TYPE_GPIO, CHANNEL_TYPE_ANALOG_IN, CHANNEL_TYPE_ANALOG_OUT
         if channel in ["GPIO1", "GPIO2", "GPIO3"]:
             return CHANNEL_TYPE_GPIO
         elif channel in ["DAC1", "DAC2"]:

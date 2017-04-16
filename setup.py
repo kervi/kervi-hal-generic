@@ -17,7 +17,8 @@ setup(
         "kervi_hal_generic",
     ],
     install_requires=[
-        'psutil'
+        'psutil',
+        'kervi'
     ],
 
 )
