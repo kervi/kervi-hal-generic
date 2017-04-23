@@ -4,6 +4,9 @@ class I2CDriver(II2CDeviceDriver):
     """
     Class for communicating with an I2C devices.
     """
+    def __init__(self, address, bus):
+        pass
+
     def write_raw8(self, value):
         """Write an 8-bit value on the bus (without register)."""
         raise NotImplementedError
