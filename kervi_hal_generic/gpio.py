@@ -23,7 +23,7 @@ class GPIODriver(IGPIODeviceDriver):
     def name(self):
         return "Generic GPIO"
 
-    def define_as_input(self, pin):
+    def define_as_input(self, pin, pullup=None, bounce_time=0):
         print("define pin in")
 
     def define_as_output(self, pin):
