@@ -5,7 +5,7 @@ class GPIODriver(IGPIODeviceDriver):
 
     def __init__(self, gpio_id="generic_gpio"):
         IGPIODeviceDriver.__init__(self, gpio_id)
-        print("init generic gpio driver")
+        pass
 
     def _get_channel_type(self, channel):
         from kervi.hal.gpio import CHANNEL_TYPE_GPIO, CHANNEL_TYPE_ANALOG_IN, CHANNEL_TYPE_ANALOG_OUT
@@ -29,7 +29,7 @@ class GPIODriver(IGPIODeviceDriver):
     def define_as_output(self, pin):
         print("define pin out")
 
-    def define_as_pwm(self, pin, frequency):
+    def define_as_pwm(self, pin, frequency, duty_cycle):
         print("define pwm")
 
     def set(self, pin, state):

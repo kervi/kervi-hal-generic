@@ -1,4 +1,3 @@
-
 def get_gpio_driver():
     from . import gpio
     return gpio.GPIODriver()
