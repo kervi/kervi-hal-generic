@@ -1,5 +1,5 @@
 import datetime
-from kervi.camera import FrameCameraDeviceDriver
+from kervi.vision.camera import FrameCameraDeviceDriver
 from PIL import Image, ImageDraw
 
 class CameraDriver(FrameCameraDeviceDriver):
