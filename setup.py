@@ -1,6 +1,10 @@
 import distutils
 from setuptools import setup
-from kervi_hal_generic.version import VERSION
+
+try:
+    from kervi.platforms.generic.version import VERSION
+except:
+    VERSION = "0.0"
 
 try:
     distutils.dir_util.remove_tree("dist")
@@ -14,7 +18,7 @@ setup(
     Generic platform driver for the Kervi automation framework.
     """,
     packages=[
-        "kervi_hal_generic",
+        "kervi/platforms/generic",
     ],
     install_requires=[
         'psutil'
